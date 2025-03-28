@@ -6,7 +6,6 @@ import { movieApi } from "../../utils/movieApi";
 function TriviaQuestion() {
 	const [movies, setMovies] = useState([]);
 	const [selectedMovie, setSelectedMovie] = useState();
-	const [answers, setAnswers] = useState();
 
 	const randomAnswer = () => {
 		if (!movies.length) {
@@ -92,7 +91,7 @@ function TriviaQuestion() {
 							}
 						}}
 					>
-						{randomAnswer() || "Generic Movie"}
+						{selectedMovie && selectedMovie.title}
 					</HackstreetButton>
 
 					<HackstreetButton
