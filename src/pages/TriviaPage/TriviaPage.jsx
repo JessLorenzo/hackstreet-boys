@@ -1,5 +1,6 @@
 import "./TriviaPage.scss";
 import HackstreetButton from "../../components/HackstreetButton/HackstreetButton.jsx";
+import { Link } from "react-router-dom";
 
 function TriviaPage() {
   return (
@@ -15,7 +16,9 @@ function TriviaPage() {
           </p>
         </span>
         <div className="main__buttons">
-          <HackstreetButton>Start Game</HackstreetButton>
+          <Link to="/question">
+            <HackstreetButton>Start Game</HackstreetButton>
+          </Link>
           <HackstreetButton>Return Home</HackstreetButton>
         </div>
       </div>
