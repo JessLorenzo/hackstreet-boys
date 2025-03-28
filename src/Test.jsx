@@ -1,3 +1,4 @@
+import HackstreetButton from "./components/HackstreetButton/HackstreetButton";
 import { movieApi } from "./utils/movieApi";
 import { useEffect, useState } from "react";
 function Test() {
@@ -20,6 +21,7 @@ function Test() {
 	return (
 		<>
 			<div>
+				<HackstreetButton>Test</HackstreetButton>
 				<p>{movies && JSON.stringify(movies)}</p>
 			</div>
 		</>
