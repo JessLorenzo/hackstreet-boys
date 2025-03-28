@@ -1,8 +1,19 @@
 import "./TriviaQuestion.scss";
 import HackstreetButton from "../../components/HackstreetButton/HackstreetButton.jsx";
 import { useEffect, useState } from "react";
-import { movieApi } from "../../utils/movieApi";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+const BEARER_TOKEN = import.meta.env.VITE_BEARER_TOKEN;
+
+const axiosInstance = axios.create({
+	baseURL: BASE_URL,
+	headers: {
+		accept: "application/json",
+		Authorization: `Bearer ${BEARER_TOKEN}`,
+	},
+});
 
 function TriviaQuestion() {
 	const [movies, setMovies] = useState([]);
@@ -27,15 +38,28 @@ function TriviaQuestion() {
 	};
 
 	useEffect(() => {
+		const getPopularMovies = async () => {
+			const page = Math.floor(Math.random() * 251);
+			const res = await axiosInstance.get("/movie/top_rated", {
+				params: { language: "en-US", page },
+			});
+			return res.data;
+		};
+
+		const getMovieGenres = async () => {
+			const res = await axiosInstance.get("/genre/movie/list");
+			return res.data.genres;
+		};
+
 		const initialSetup = async () => {
 			try {
-				const res = await movieApi.getPopularMovies();
+				const res = await getPopularMovies();
 				setMovies(res.results);
 
 				const random = Math.floor(Math.random() * 21);
 				setSelectedMovie(res.results[random]);
 
-				const results = await movieApi.getMovieGenres();
+				const results = await getMovieGenres();
 				console.log(results);
 				const genreValue = results?.filter((item) => item.id === res.results[random].genre_ids[0]);
 				setGenre(genreValue[0]);
