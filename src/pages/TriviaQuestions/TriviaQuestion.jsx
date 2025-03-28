@@ -1,5 +1,5 @@
 import "./TriviaQuestion.scss";
-import HackstreetButton from "./components/HackstreetButton/HackstreetButton.jsx";
+import HackstreetButton from "../../components/HackstreetButton/HackstreetButton.jsx";
 
 function TriviaQuestion() {
   return (

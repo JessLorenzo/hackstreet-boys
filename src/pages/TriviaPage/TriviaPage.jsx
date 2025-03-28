@@ -3,22 +3,23 @@ import HackstreetButton from "../../components/HackstreetButton/HackstreetButton
 
 function TriviaPage() {
   return (
-    <div className="main">
-      <div className="main_nav">
-        <h1>Trivia Challenge</h1>
-        <div className="main_text">
-          <p>
-            Answer correctly to start your win streak. Didn't make it to the
-            next round? No problem! You can upgrade to Premium to continue
-            playing or return in 24 hours to try again.
+    <>
+      <div className="main">
+        <h1 className="main__title">ACTION</h1>
+        <h1 className="main__subtitle">Trivia Challenge</h1>
+        <span>
+          <p className="main__text">
+            Answer 3 questions correctly to start you win streak. Didn’t make it
+            to the next round? No problem! You can upgrade to Premium to
+            continue or return in 24 hours to try again.
           </p>
-        </div>
-        <div className="main_buttons">
+        </span>
+        <div className="main__buttons">
           <HackstreetButton>Start Game</HackstreetButton>
           <HackstreetButton>Return Home</HackstreetButton>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
