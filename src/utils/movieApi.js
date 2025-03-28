@@ -13,7 +13,7 @@ const axiosInstance = axios.create({
 
 export const movieApi = {
 	getPopularMovies: async () => {
-		const page = Math.floor(Math.random() * 500) + 1;
+		const page = Math.floor(Math.random() * 251);
 		const res = await axiosInstance.get("/movie/top_rated", {
 			params: { language: "en-US", page },
 		});
