@@ -1,10 +1,9 @@
 import "./App.scss";
 
 function App() {
-<<<<<<< HEAD
   return (
     <div className="container">
-      <div className="container__modal" style={{}}>
+      <div className="container__modal">
         <h1>What is your favorite movie</h1>
         <div className="container__buttons">
           <button>choice 1</button>
@@ -15,9 +14,6 @@ function App() {
       </div>
     </div>
   );
-=======
-	return <></>;
->>>>>>> develop
 }
 
 export default App;
