@@ -6,6 +6,22 @@ import { movieApi } from "../../utils/movieApi";
 function TriviaQuestion() {
 	const [movies, setMovies] = useState([]);
 	const [selectedMovie, setSelectedMovie] = useState();
+	const [answers, setAnswers] = useState();
+
+	const randomAnswer = () => {
+		if (!movies.length) {
+			return;
+		} else {
+			let random = Math.floor(Math.random() * 21);
+			let answer = movies[random];
+			if (answer === selectedMovie) {
+				random = Math.floor(Math.random() * 21);
+				answer = movies[random];
+			} else {
+				return answer["title"];
+			}
+		}
+	};
 
 	useEffect(() => {
 		const test = async () => {
@@ -30,21 +46,6 @@ function TriviaQuestion() {
 		);
 	}
 
-	const randomAnswer = () => {
-		if (!movies.length) {
-			return;
-		} else {
-			let random = Math.floor(Math.random() * 21);
-			let answer = movies[random];
-			if (answer === selectedMovie) {
-				random = Math.floor(Math.random() * 21);
-				answer = movies[random];
-			} else {
-				return answer["title"];
-			}
-		}
-	};
-
 	return (
 		<div className="container">
 			<div className="container__modal">
@@ -55,10 +56,57 @@ function TriviaQuestion() {
 				</div>
 
 				<div className="container__buttons">
-					<HackstreetButton>{randomAnswer() || "Generic Movie"}</HackstreetButton>
-					<HackstreetButton>{randomAnswer() || "Generic Movie"}</HackstreetButton>
-					<HackstreetButton>{randomAnswer() || "Generic Movie"}</HackstreetButton>
-					<HackstreetButton>{randomAnswer() || "Generic Movie"}</HackstreetButton>
+					<HackstreetButton
+						onClick={(e) => {
+							console.log(e.target.innerHTML);
+							if (e.target.innerHTML === selectedMovie.title) {
+								alert("Correct!");
+							} else {
+								alert("Fail!");
+							}
+						}}
+					>
+						{randomAnswer() || "Generic Movie"}
+					</HackstreetButton>
+
+					<HackstreetButton
+						onClick={(e) => {
+							console.log(e.target.innerHTML);
+							if (e.target.innerHTML === selectedMovie.title) {
+								alert("Correct!");
+							} else {
+								alert("Fail!");
+							}
+						}}
+					>
+						{randomAnswer() || "Generic Movie"}
+					</HackstreetButton>
+
+					<HackstreetButton
+						onClick={(e) => {
+							console.log(e.target.innerHTML);
+							if (e.target.innerHTML === selectedMovie.title) {
+								alert("Correct!");
+							} else {
+								alert("Fail!");
+							}
+						}}
+					>
+						{randomAnswer() || "Generic Movie"}
+					</HackstreetButton>
+
+					<HackstreetButton
+						onClick={(e) => {
+							console.log(e.target.innerHTML);
+							if (e.target.innerHTML === selectedMovie.title) {
+								alert("Correct!");
+							} else {
+								alert("Fail!");
+							}
+						}}
+					>
+						{randomAnswer() || "Generic Movie"}
+					</HackstreetButton>
 				</div>
 			</div>
 		</div>
