@@ -1,6 +1,7 @@
 import "./App.scss";
 
 function App() {
+<<<<<<< HEAD
   return (
     <div className="container">
       <div className="container__modal" style={{}}>
@@ -14,6 +15,9 @@ function App() {
       </div>
     </div>
   );
+=======
+	return <></>;
+>>>>>>> develop
 }
 
 export default App;
