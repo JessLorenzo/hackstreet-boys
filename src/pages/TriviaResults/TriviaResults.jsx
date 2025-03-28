@@ -19,10 +19,6 @@ const TriviaResults = () => {
 	console.log(id);
 
 	useEffect(() => {
-		const findMovieById = async () => {
-			return res.data;
-		};
-
 		const test = async () => {
 			const results = await axiosInstance.get(`https://api.themoviedb.org/3/movie/${id}`);
 			setSelectedMovie(results.data);
