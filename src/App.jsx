@@ -12,7 +12,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<TriviaPage />} />
 				<Route path="/question/:page" element={<TriviaQuestion />} />
-				<Route path="/results" element={<TriviaResults />} />
+				<Route path="/results/:id/:genre_id/:resBool" element={<TriviaResults />} />
 			</Routes>
 		</BrowserRouter>
 	);

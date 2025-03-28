@@ -1,7 +1,7 @@
 import "./TriviaQuestion.scss";
 import HackstreetButton from "../../components/HackstreetButton/HackstreetButton.jsx";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -20,6 +20,7 @@ function TriviaQuestion() {
 	const [genre, setGenre] = useState([]);
 	const [selectedMovie, setSelectedMovie] = useState();
 
+	const navigate = useNavigate();
 	const { page } = useParams();
 
 	const randomAnswer = () => {
@@ -95,9 +96,9 @@ function TriviaQuestion() {
 						onClick={(e) => {
 							console.log(e.target.innerHTML);
 							if (e.target.innerHTML === selectedMovie?.title) {
-								alert("Correct!");
+								navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
 							} else {
-								alert("Fail!");
+								navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
 							}
 						}}
 					>
@@ -108,9 +109,9 @@ function TriviaQuestion() {
 						onClick={(e) => {
 							console.log(e.target.innerHTML);
 							if (e.target.innerHTML === selectedMovie?.title) {
-								alert("Correct!");
+								navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
 							} else {
-								alert("Fail!");
+								navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
 							}
 						}}
 					>
@@ -121,9 +122,9 @@ function TriviaQuestion() {
 						onClick={(e) => {
 							console.log(e.target.innerHTML);
 							if (e.target.innerHTML === selectedMovie?.title) {
-								alert("Correct!");
+								navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
 							} else {
-								alert("Fail!");
+								navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
 							}
 						}}
 					>
@@ -134,9 +135,9 @@ function TriviaQuestion() {
 						onClick={(e) => {
 							console.log(e.target.innerHTML);
 							if (e.target.innerHTML === selectedMovie?.title) {
-								alert("Correct!");
+								navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
 							} else {
-								alert("Fail!");
+								navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
 							}
 						}}
 					>
