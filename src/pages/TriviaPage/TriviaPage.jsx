@@ -7,7 +7,7 @@ function TriviaPage() {
     <>
       <div className="main">
         <h1 className="main__title">ACTION</h1>
-        <h1 className="main__subtitle">Trivia Challenge</h1>
+        <h2 className="main__subtitle">Trivia Challenge</h2>
         <span>
           <p className="main__text">
             Answer 3 questions correctly to start you win streak. Didn’t make it
