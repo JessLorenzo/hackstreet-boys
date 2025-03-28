@@ -21,8 +21,8 @@ function TriviaQuestion() {
   const [genre, setGenre] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState();
 
-	const navigate = useNavigate();
-	const { page } = useParams();
+  const navigate = useNavigate();
+  const { page } = useParams();
 
   const randomAnswer = () => {
     if (!movies.length) {
@@ -112,107 +112,63 @@ function TriviaQuestion() {
             {randomAnswer() || "Generic Movie"}
           </HackstreetButton>
 
-<<<<<<< HEAD
-				<div className="container__buttons">
-					<HackstreetButton
-						onClick={(e) => {
-							console.log(e.target.innerHTML);
-							if (e.target.innerHTML === selectedMovie?.title) {
-								navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
-							} else {
-								navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
-							}
-						}}
-					>
-						{randomAnswer() || "Generic Movie"}
-					</HackstreetButton>
+          <div className="container__buttons">
+            <HackstreetButton
+              onClick={(e) => {
+                console.log(e.target.innerHTML);
+                if (e.target.innerHTML === selectedMovie?.title) {
+                  navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
+                } else {
+                  navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
+                }
+              }}
+            >
+              {randomAnswer() || "Generic Movie"}
+            </HackstreetButton>
 
-					<HackstreetButton
-						onClick={(e) => {
-							console.log(e.target.innerHTML);
-							if (e.target.innerHTML === selectedMovie?.title) {
-								navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
-							} else {
-								navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
-							}
-						}}
-					>
-						{randomAnswer() || "Generic Movie"}
-					</HackstreetButton>
+            <HackstreetButton
+              onClick={(e) => {
+                console.log(e.target.innerHTML);
+                if (e.target.innerHTML === selectedMovie?.title) {
+                  navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
+                } else {
+                  navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
+                }
+              }}
+            >
+              {randomAnswer() || "Generic Movie"}
+            </HackstreetButton>
 
-					<HackstreetButton
-						onClick={(e) => {
-							console.log(e.target.innerHTML);
-							if (e.target.innerHTML === selectedMovie?.title) {
-								navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
-							} else {
-								navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
-							}
-						}}
-					>
-						{selectedMovie && selectedMovie?.title}
-					</HackstreetButton>
+            <HackstreetButton
+              onClick={(e) => {
+                console.log(e.target.innerHTML);
+                if (e.target.innerHTML === selectedMovie?.title) {
+                  navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
+                } else {
+                  navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
+                }
+              }}
+            >
+              {selectedMovie && selectedMovie?.title}
+            </HackstreetButton>
 
-					<HackstreetButton
-						onClick={(e) => {
-							console.log(e.target.innerHTML);
-							if (e.target.innerHTML === selectedMovie?.title) {
-								navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
-							} else {
-								navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
-							}
-						}}
-					>
-						{randomAnswer() || "Generic Movie"}
-					</HackstreetButton>
-				</div>
-			</div>
-		</div>
-	);
-=======
-          <HackstreetButton
-            onClick={(e) => {
-              console.log(e.target.innerHTML);
-              if (e.target.innerHTML === selectedMovie?.title) {
-                alert("Correct!");
-              } else {
-                alert("Fail!");
-              }
-            }}
-          >
-            {randomAnswer() || "Generic Movie"}
-          </HackstreetButton>
-
-          <HackstreetButton
-            onClick={(e) => {
-              console.log(e.target.innerHTML);
-              if (e.target.innerHTML === selectedMovie?.title) {
-                alert("Correct!");
-              } else {
-                alert("Fail!");
-              }
-            }}
-          >
-            {selectedMovie && selectedMovie?.title}
-          </HackstreetButton>
-
-          <HackstreetButton
-            onClick={(e) => {
-              console.log(e.target.innerHTML);
-              if (e.target.innerHTML === selectedMovie?.title) {
-                alert("Correct!");
-              } else {
-                alert("Fail!");
-              }
-            }}
-          >
-            {randomAnswer() || "Generic Movie"}
-          </HackstreetButton>
+            <HackstreetButton
+              onClick={(e) => {
+                console.log(e.target.innerHTML);
+                if (e.target.innerHTML === selectedMovie?.title) {
+                  navigate(`/results/${selectedMovie?.id}/${genre.name}/0`);
+                } else {
+                  navigate(`/results/${selectedMovie?.id}/${genre.name}/1`);
+                }
+              }}
+            >
+              {randomAnswer() || "Generic Movie"}
+            </HackstreetButton>
+          </div>
         </div>
       </div>
     </div>
   );
->>>>>>> e681a92abcf2e52ca072e1f10fd2d7be697352c3
 }
 
 export default TriviaQuestion;
