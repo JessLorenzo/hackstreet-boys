@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: start;
+  background-color: transparent;
+  padding: 3rem;
+  position: absolute;
+
+  &__text {
+    color: white;
+    font-size: 0.7rem;
+    padding-left: 0.3rem;
+  }
+}
